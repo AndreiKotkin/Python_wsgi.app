@@ -1,0 +1,17 @@
+body{
+    background-color: aliceblue;
+}
+
+.search-form{
+    margin: 0 auto;
+    padding: 0px;
+    width: 800px;
+}
+.search-form input{
+    width: 570px;
+    height: 40px;
+}
+.search-form button{
+    width: 100px;
+    height: 44px;
+}

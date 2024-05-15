@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{{ super() }}
+{% block title %}<Title>Music Search</Title>{% endblock %}
+{% block body %}
+<section>
+    <div class="add">
+        <form id="add-form" action="{{ url_for('add') }}" method="post" enctype="multipart/form-data">
+            <h3>Добавление музыкального файла</h3>
+            {% for cat, msg in get_flashed_messages(True) %}
+            <div class="flash {{cat}}">{{msg}}</div>
+            {% endfor %}
+            <input type="text" name="name" id="name" placeholder="Название файла" required>
+            <input type="text" name="content" id="content" placeholder="static/music/(имя файла)" required>
+            <input type="file" name="file" accept="audio/*" multiple required>
+            <button type="submit" value="send">Добавить</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

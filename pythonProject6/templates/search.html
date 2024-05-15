@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{{ super() }}
+{% block title %}<Title>Music Search</Title>{% endblock %}
+{% block body %}
+<section>
+    <div class="search">
+        <form method="get">
+            {% for el in data %}
+            <audio controls="controls" autoplay="autoplay" src="{{ el.content }}"></audio>
+            <li>{{ el. name }}</li>
+            {% endfor %}
+        </form>
+    </div>
+</section>
+{% endblock %}

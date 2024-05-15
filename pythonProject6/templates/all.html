@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{{ super() }}
+{% block title %}<Title>Music Search</Title>{% endblock %}
+{% block body %}
+<section>
+    <div class="search">
+        <form method="get">
+
+            <audio controls="controls" autoplay="autoplay"></audio>
+            {% for song in songs %}
+                <li><a href="javascript:void(0);" onclick="playSong('{{ song}}')">{{ song }} </a> </li>
+            {% endfor %}
+
+
+        <script type="text/javascript">
+            function playSong(song){
+                $('audio').attr('src', '/static/music/'+song);
+            }
+        </script>
+
+        </form>
+    </div>
+</section>
+{% endblock %}
